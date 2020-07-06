@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D9D251B-46F3-4DD3-87C7-05B8DFD7870C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YaoSearch</RootNamespace>
+    <AssemblyName>YaoSearch</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CDBOperate.cs" />
+    <Compile Include="CDoubleBufferDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CIniFile.cs" />
+    <Compile Include="CSpxx.cs" />
+    <Compile Include="CTxtExport.cs" />
+    <Compile Include="CXmlEnv.cs" />
+    <Compile Include="CXmlIn.cs" />
+    <Compile Include="CXmlInit.cs" />
+    <Compile Include="CXmlOut.cs" />
+    <Compile Include="FormCaiGou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaiGou.designer.cs">
+      <DependentUpon>FormCaiGou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerateXml.Designer.cs">
+      <DependentUpon>FormGenerateXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectPur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectPur.designer.cs">
+      <DependentUpon>FormSelectPur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUnsale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUnsale.Designer.cs">
+      <DependentUpon>FormUnsale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJiFen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJiFen.Designer.cs">
+      <DependentUpon>FormJiFen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoading.Designer.cs">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShowMediDetial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowMediDetial.Designer.cs">
+      <DependentUpon>FormShowMediDetial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectGYS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectGYS.Designer.cs">
+      <DependentUpon>FormSelectGYS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectMedi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectMedi.Designer.cs">
+      <DependentUpon>FormSelectMedi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateDrug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateDrug.Designer.cs">
+      <DependentUpon>FormUpdateDrug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateGys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateGys.Designer.cs">
+      <DependentUpon>FormUpdateGys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateScoreTYpe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateScoreTYpe.Designer.cs">
+      <DependentUpon>FormUpdateScoreTYpe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateYxqx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateYxqx.Designer.cs">
+      <DependentUpon>FormUpdateYxqx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCaiGou.resx">
+      <DependentUpon>FormCaiGou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerateXml.resx">
+      <DependentUpon>FormGenerateXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectPur.resx">
+      <DependentUpon>FormSelectPur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUnsale.resx">
+      <DependentUpon>FormUnsale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJiFen.resx">
+      <DependentUpon>FormJiFen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoading.resx">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowMediDetial.resx">
+      <DependentUpon>FormShowMediDetial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectGYS.resx">
+      <DependentUpon>FormSelectGYS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectMedi.resx">
+      <DependentUpon>FormSelectMedi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateDrug.resx">
+      <DependentUpon>FormUpdateDrug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateGys.resx">
+      <DependentUpon>FormUpdateGys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateScoreTYpe.resx">
+      <DependentUpon>FormUpdateScoreTYpe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateYxqx.resx">
+      <DependentUpon>FormUpdateYxqx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\icons\loading1.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,8 @@
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\bin\x86\Release\YaoSearch.exe
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\bin\x86\Release\YaoSearch.pdb
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\obj\x86\Release\YaoSearch.FormMain.resources
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\obj\x86\Release\YaoSearch.FormSetting.resources
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\obj\x86\Release\YaoSearch.Properties.Resources.resources
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\obj\x86\Release\YaoSearch.csproj.GenerateResource.Cache
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\obj\x86\Release\YaoSearch.exe
+F:\项目\2016\7.药查询\YaoSearch\YaoSearch\obj\x86\Release\YaoSearch.pdb

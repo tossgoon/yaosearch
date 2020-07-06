@@ -1,0 +1,1 @@
+server=localhost;database=yaodian20160706;uid=sa;pwd=sa
