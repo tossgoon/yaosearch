@@ -570,5 +570,11 @@ namespace YaoSearch
             FormUpdateYxqx form = new FormUpdateYxqx(thisConn);
             form.ShowDialog();
         }
+
+        private void 单品采购汇总ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSinglePurStatis form = new FormSinglePurStatis(thisConn);
+            form.ShowDialog();
+        }
     }
 }

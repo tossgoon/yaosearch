@@ -54,6 +54,6 @@ F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.FormUpda
 F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.Properties.Resources.resources
 F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.csproj.GenerateResource.Cache
 F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.FormUpdateGys.resources
-F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.csprojResolveAssemblyReference.cache
 F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.FormGenerateXml.resources
 F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.FormUpdateYxqx.resources
+F:\项目\2020\45.YaoSearch\YaoSearch\YaoSearch\obj\x86\Debug\YaoSearch.FormSinglePurStatis.resources

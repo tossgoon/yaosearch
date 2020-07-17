@@ -88,6 +88,12 @@
     <Compile Include="FormSelectPur.designer.cs">
       <DependentUpon>FormSelectPur.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSinglePurStatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSinglePurStatis.Designer.cs">
+      <DependentUpon>FormSinglePurStatis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUnsale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSelectPur.resx">
       <DependentUpon>FormSelectPur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSinglePurStatis.resx">
+      <DependentUpon>FormSinglePurStatis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUnsale.resx">
       <DependentUpon>FormUnsale.cs</DependentUpon>

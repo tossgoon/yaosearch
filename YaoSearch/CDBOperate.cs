@@ -614,5 +614,57 @@ namespace YaoSearch
             dtable.Load(thisReader);
             return dtable;
         }
+
+        //药品的单品汇总查询
+        public DataTable SelectSingMedicineStatis(SqlConnection thisConn, string bm,DateTime begindate, DateTime enddate)
+        {
+            SqlCommand thisCommand = thisConn.CreateCommand();
+            thisCommand.CommandText = "z_select_buy_sum";
+            thisCommand.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParme;
+            sqlParme = thisCommand.Parameters.Add("@date1", SqlDbType.NVarChar);
+            sqlParme.Direction = ParameterDirection.Input;
+            sqlParme.Value = begindate.ToString("yyyyMM");
+            sqlParme = thisCommand.Parameters.Add("@date2", SqlDbType.NVarChar);
+            sqlParme.Direction = ParameterDirection.Input;
+            sqlParme.Value = enddate.ToString("yyyyMM");
+            sqlParme = thisCommand.Parameters.Add("@bm", SqlDbType.NVarChar);
+            sqlParme.Direction = ParameterDirection.Input;
+            sqlParme.Value = bm;
+            thisCommand.CommandTimeout = 0;
+            SqlDataReader thisReader = thisCommand.ExecuteReader();
+            DataTable dtable = new DataTable();
+            dtable.Load(thisReader);
+            return dtable;
+        }
+        //药品的明细查询
+        public DataTable SelectSingMedicineDetail(SqlConnection thisConn, string bm, string dm, DateTime begindate, DateTime enddate)
+        {
+            SqlCommand thisCommand = thisConn.CreateCommand();
+            thisCommand.CommandText = "z_select_buy_sum_detail";
+            thisCommand.CommandType = CommandType.StoredProcedure;
+            SqlParameter sqlParme;
+            sqlParme = thisCommand.Parameters.Add("@date1", SqlDbType.NVarChar);
+            sqlParme.Direction = ParameterDirection.Input;
+            sqlParme.Value = begindate.ToString("yyyyMM");
+
+            sqlParme = thisCommand.Parameters.Add("@date2", SqlDbType.NVarChar);
+            sqlParme.Direction = ParameterDirection.Input;
+            sqlParme.Value = enddate.ToString("yyyyMM");
+
+            sqlParme = thisCommand.Parameters.Add("@bm", SqlDbType.NVarChar);
+            sqlParme.Direction = ParameterDirection.Input;
+            sqlParme.Value = bm;
+
+            sqlParme = thisCommand.Parameters.Add("@dm", SqlDbType.NVarChar);
+            sqlParme.Direction = ParameterDirection.Input;
+            sqlParme.Value = dm;
+            
+            thisCommand.CommandTimeout = 0;
+            SqlDataReader thisReader = thisCommand.ExecuteReader();
+            DataTable dtable = new DataTable();
+            dtable.Load(thisReader);
+            return dtable;
+        }
     }
 }

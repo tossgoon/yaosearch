@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.基础信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +42,7 @@
             this.中心上传ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.标准化药品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.标准化区域码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.有效期更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.生成上传数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -57,6 +58,7 @@
             this.statusStripInfo = new System.Windows.Forms.StatusStrip();
             this.stripLabelInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstripProgress = new System.Windows.Forms.ToolStripProgressBar();
+            this.tlabelDm = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtGYSbm = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,15 +76,14 @@
             this.label120 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgvDrugSearch = new notePadProj.CDoubleBufferDataGridView();
             this.tbtnUpdateBuyGive = new System.Windows.Forms.ToolStripButton();
             this.tbtnUpdateScore = new System.Windows.Forms.ToolStripButton();
             this.tbtnUpdatePercent = new System.Windows.Forms.ToolStripButton();
             this.tbtnSelectVIP = new System.Windows.Forms.ToolStripButton();
             this.tbtnVipLevel = new System.Windows.Forms.ToolStripButton();
             this.tbtnExportTxt = new System.Windows.Forms.ToolStripButton();
-            this.有效期更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tlabelDm = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dgvDrugSearch = new notePadProj.CDoubleBufferDataGridView();
+            this.单品采购汇总ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStripInfo.SuspendLayout();
@@ -123,7 +124,8 @@
             // 测试ToolStripMenuItem
             // 
             this.测试ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.采购管理ToolStripMenuItem});
+            this.采购管理ToolStripMenuItem,
+            this.单品采购汇总ToolStripMenuItem});
             this.测试ToolStripMenuItem.Name = "测试ToolStripMenuItem";
             this.测试ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.测试ToolStripMenuItem.Text = "【采购】";
@@ -166,6 +168,13 @@
             this.标准化区域码ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.标准化区域码ToolStripMenuItem.Text = "标准化（区域码）...";
             this.标准化区域码ToolStripMenuItem.Click += new System.EventHandler(this.标准化区域码ToolStripMenuItem_Click);
+            // 
+            // 有效期更新ToolStripMenuItem
+            // 
+            this.有效期更新ToolStripMenuItem.Name = "有效期更新ToolStripMenuItem";
+            this.有效期更新ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.有效期更新ToolStripMenuItem.Text = "有效期更新...";
+            this.有效期更新ToolStripMenuItem.Click += new System.EventHandler(this.有效期更新ToolStripMenuItem_Click);
             // 
             // toolStripSeparator10
             // 
@@ -278,6 +287,12 @@
             // 
             this.tstripProgress.Name = "tstripProgress";
             this.tstripProgress.Size = new System.Drawing.Size(150, 16);
+            // 
+            // tlabelDm
+            // 
+            this.tlabelDm.Name = "tlabelDm";
+            this.tlabelDm.Size = new System.Drawing.Size(32, 17);
+            this.tlabelDm.Text = "店码";
             // 
             // groupBox2
             // 
@@ -463,6 +478,56 @@
             this.label2.Text = "终止日期";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dgvDrugSearch
+            // 
+            this.dgvDrugSearch.AllowUserToAddRows = false;
+            this.dgvDrugSearch.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvDrugSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDrugSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDrugSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDrugSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDrugSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDrugSearch.ColumnHeadersHeight = 30;
+            this.dgvDrugSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDrugSearch.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDrugSearch.EnableHeadersVisualStyles = false;
+            this.dgvDrugSearch.Location = new System.Drawing.Point(4, 203);
+            this.dgvDrugSearch.MultiSelect = false;
+            this.dgvDrugSearch.Name = "dgvDrugSearch";
+            this.dgvDrugSearch.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDrugSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDrugSearch.RowHeadersWidth = 65;
+            this.dgvDrugSearch.RowTemplate.Height = 23;
+            this.dgvDrugSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDrugSearch.Size = new System.Drawing.Size(1142, 344);
+            this.dgvDrugSearch.TabIndex = 18;
+            this.dgvDrugSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDrugSearch_CellClick);
+            this.dgvDrugSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDrugSearch_CellDoubleClick);
+            // 
             // tbtnUpdateBuyGive
             // 
             this.tbtnUpdateBuyGive.Image = ((System.Drawing.Image)(resources.GetObject("tbtnUpdateBuyGive.Image")));
@@ -517,68 +582,12 @@
             this.tbtnExportTxt.Text = "导出txt";
             this.tbtnExportTxt.Click += new System.EventHandler(this.tbtnExportTxt_Click);
             // 
-            // 有效期更新ToolStripMenuItem
+            // 单品采购汇总ToolStripMenuItem
             // 
-            this.有效期更新ToolStripMenuItem.Name = "有效期更新ToolStripMenuItem";
-            this.有效期更新ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.有效期更新ToolStripMenuItem.Text = "有效期更新...";
-            this.有效期更新ToolStripMenuItem.Click += new System.EventHandler(this.有效期更新ToolStripMenuItem_Click);
-            // 
-            // tlabelDm
-            // 
-            this.tlabelDm.Name = "tlabelDm";
-            this.tlabelDm.Size = new System.Drawing.Size(32, 17);
-            this.tlabelDm.Text = "店码";
-            // 
-            // dgvDrugSearch
-            // 
-            this.dgvDrugSearch.AllowUserToAddRows = false;
-            this.dgvDrugSearch.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDrugSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDrugSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDrugSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDrugSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDrugSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDrugSearch.ColumnHeadersHeight = 30;
-            this.dgvDrugSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDrugSearch.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDrugSearch.EnableHeadersVisualStyles = false;
-            this.dgvDrugSearch.Location = new System.Drawing.Point(4, 203);
-            this.dgvDrugSearch.MultiSelect = false;
-            this.dgvDrugSearch.Name = "dgvDrugSearch";
-            this.dgvDrugSearch.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDrugSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDrugSearch.RowHeadersWidth = 65;
-            this.dgvDrugSearch.RowTemplate.Height = 23;
-            this.dgvDrugSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDrugSearch.Size = new System.Drawing.Size(1142, 344);
-            this.dgvDrugSearch.TabIndex = 18;
-            this.dgvDrugSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDrugSearch_CellClick);
-            this.dgvDrugSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDrugSearch_CellDoubleClick);
+            this.单品采购汇总ToolStripMenuItem.Name = "单品采购汇总ToolStripMenuItem";
+            this.单品采购汇总ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.单品采购汇总ToolStripMenuItem.Text = "单品采购汇总...";
+            this.单品采购汇总ToolStripMenuItem.Click += new System.EventHandler(this.单品采购汇总ToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -668,6 +677,7 @@
         private System.Windows.Forms.ToolStripMenuItem 生成上传数据ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 有效期更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel tlabelDm;
+        private System.Windows.Forms.ToolStripMenuItem 单品采购汇总ToolStripMenuItem;
     }
 }
 
