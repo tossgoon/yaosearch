@@ -59,6 +59,20 @@ namespace YaoSearch
             }
             return connstr;
         }
+        //获取xml上传日期
+        public static string GetSettingInfo(string settinginfo)
+        {
+            string txtFilePath = System.Windows.Forms.Application.StartupPath + "\\setting.ini";
+            string connstr = "";
+            if (File.Exists(txtFilePath))
+            {
+                CIniFile myFile = new CIniFile(txtFilePath);
+                connstr = myFile.IniReadValue("Setting", settinginfo);
+            }
+            return connstr;
+        }
+
+       
         //获取xml文件路径
         public static string GetZxXmlComnameFromTxt()
         {
@@ -71,6 +85,9 @@ namespace YaoSearch
             }
             return connstr;
         }
+
+
+
         public static string GetDianMa()
         {
             string txtFilePath = System.Windows.Forms.Application.StartupPath + "\\setting.ini";

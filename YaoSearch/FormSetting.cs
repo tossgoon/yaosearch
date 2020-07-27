@@ -179,8 +179,6 @@ namespace YaoSearch
                 MessageBox.Show("单位名称为空");
                 return;
             }
-
-
             string filePath = System.Windows.Forms.Application.StartupPath + "\\setting.ini";
             if (!File.Exists(filePath))
             {

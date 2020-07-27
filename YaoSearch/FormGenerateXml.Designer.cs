@@ -45,6 +45,12 @@
             this.txtComCode = new System.Windows.Forms.TextBox();
             this.txtComName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbdate_in = new System.Windows.Forms.Label();
+            this.lbdate_out = new System.Windows.Forms.Label();
+            this.lbdate_init = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -52,11 +58,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbdate_in);
             this.groupBox1.Controls.Add(this.date_k_in);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(24, 196);
+            this.groupBox1.Location = new System.Drawing.Point(24, 206);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 73);
+            this.groupBox1.Size = new System.Drawing.Size(271, 126);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "进货单";
@@ -66,9 +74,9 @@
             this.date_k_in.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_k_in.Location = new System.Drawing.Point(89, 31);
             this.date_k_in.Name = "date_k_in";
-            this.date_k_in.Size = new System.Drawing.Size(145, 21);
+            this.date_k_in.Size = new System.Drawing.Size(159, 21);
             this.date_k_in.TabIndex = 0;
-            this.date_k_in.Value = new System.DateTime(2019, 12, 20, 10, 5, 0, 0);
+            this.date_k_in.Value = new System.DateTime(2020, 7, 23, 15, 11, 46, 0);
             // 
             // label2
             // 
@@ -81,15 +89,15 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 474);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 465);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(827, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(870, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(721, 376);
+            this.btnGenerate.Location = new System.Drawing.Point(773, 384);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(85, 26);
             this.btnGenerate.TabIndex = 2;
@@ -111,16 +119,18 @@
             this.txtXmlPath.Location = new System.Drawing.Point(96, 36);
             this.txtXmlPath.Name = "txtXmlPath";
             this.txtXmlPath.ReadOnly = true;
-            this.txtXmlPath.Size = new System.Drawing.Size(716, 21);
+            this.txtXmlPath.Size = new System.Drawing.Size(762, 21);
             this.txtXmlPath.TabIndex = 4;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lbdate_out);
             this.groupBox4.Controls.Add(this.date_k_out);
+            this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(292, 196);
+            this.groupBox4.Location = new System.Drawing.Point(307, 206);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(252, 73);
+            this.groupBox4.Size = new System.Drawing.Size(269, 126);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "出货单";
@@ -132,7 +142,7 @@
             this.date_k_out.Name = "date_k_out";
             this.date_k_out.Size = new System.Drawing.Size(145, 21);
             this.date_k_out.TabIndex = 0;
-            this.date_k_out.Value = new System.DateTime(2019, 12, 20, 10, 24, 0, 0);
+            this.date_k_out.Value = new System.DateTime(2020, 7, 23, 15, 11, 56, 0);
             // 
             // label3
             // 
@@ -145,14 +155,16 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lbdate_init);
             this.groupBox2.Controls.Add(this.date_k_init);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(559, 196);
+            this.groupBox2.Location = new System.Drawing.Point(588, 206);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(253, 73);
+            this.groupBox2.Size = new System.Drawing.Size(270, 126);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "出货单";
+            this.groupBox2.Text = "库存单";
             // 
             // date_k_init
             // 
@@ -161,7 +173,7 @@
             this.date_k_init.Name = "date_k_init";
             this.date_k_init.Size = new System.Drawing.Size(145, 21);
             this.date_k_init.TabIndex = 0;
-            this.date_k_init.Value = new System.DateTime(2019, 12, 20, 10, 24, 0, 0);
+            this.date_k_init.Value = new System.DateTime(2020, 7, 23, 15, 12, 2, 0);
             // 
             // label4
             // 
@@ -194,7 +206,7 @@
             this.txtComName.Location = new System.Drawing.Point(337, 86);
             this.txtComName.Name = "txtComName";
             this.txtComName.ReadOnly = true;
-            this.txtComName.Size = new System.Drawing.Size(475, 21);
+            this.txtComName.Size = new System.Drawing.Size(521, 21);
             this.txtComName.TabIndex = 4;
             // 
             // label6
@@ -206,11 +218,68 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "单位名称：";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 79);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 12);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "上次生成日期：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 12);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "上次生成日期：";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 79);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 12);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "上次生成日期：";
+            // 
+            // lbdate_in
+            // 
+            this.lbdate_in.AutoSize = true;
+            this.lbdate_in.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbdate_in.Location = new System.Drawing.Point(115, 79);
+            this.lbdate_in.Name = "lbdate_in";
+            this.lbdate_in.Size = new System.Drawing.Size(11, 12);
+            this.lbdate_in.TabIndex = 4;
+            this.lbdate_in.Text = " ";
+            // 
+            // lbdate_out
+            // 
+            this.lbdate_out.AutoSize = true;
+            this.lbdate_out.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbdate_out.Location = new System.Drawing.Point(114, 79);
+            this.lbdate_out.Name = "lbdate_out";
+            this.lbdate_out.Size = new System.Drawing.Size(11, 12);
+            this.lbdate_out.TabIndex = 4;
+            this.lbdate_out.Text = " ";
+            // 
+            // lbdate_init
+            // 
+            this.lbdate_init.AutoSize = true;
+            this.lbdate_init.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbdate_init.Location = new System.Drawing.Point(114, 79);
+            this.lbdate_init.Name = "lbdate_init";
+            this.lbdate_init.Size = new System.Drawing.Size(11, 12);
+            this.lbdate_init.TabIndex = 4;
+            this.lbdate_init.Text = " ";
+            // 
             // FormGenerateXml
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 496);
+            this.ClientSize = new System.Drawing.Size(870, 487);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtComName);
@@ -255,5 +324,11 @@
         private System.Windows.Forms.TextBox txtComCode;
         private System.Windows.Forms.TextBox txtComName;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbdate_in;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbdate_out;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbdate_init;
+        private System.Windows.Forms.Label label9;
     }
 }

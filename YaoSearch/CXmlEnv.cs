@@ -76,7 +76,11 @@ namespace YaoSearch
         {
             get
             {
-                return DateTime.Now;
+                return this.send_time;
+            }
+            set
+            {
+                this.send_time = value;
             }
         }
         public string SENDERNAME

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml;
+using System.IO;
 namespace YaoSearch
 {
     public partial class FormGenerateXml : Form
@@ -23,11 +24,18 @@ namespace YaoSearch
             txtXmlPath.Text= CDBOperate.GetZxXmlPathFromTxt();
             txtComCode.Text = CDBOperate.GetZxXmlComcodeFromTxt();
             txtComName.Text = CDBOperate.GetZxXmlComnameFromTxt();
+
+
+            lbdate_in.Text = CDBOperate.GetSettingInfo("ZxUploadXmlDateIn");
+            lbdate_init.Text = CDBOperate.GetSettingInfo("ZxUploadXmlDateInit");
+            lbdate_out.Text = CDBOperate.GetSettingInfo("ZxUploadXmlDateOut");
         }
 
         private void FormGenerateXml_Load(object sender, EventArgs e)
         {
-
+            this.date_k_in.Value = DateTime.Now;
+            this.date_k_init.Value = DateTime.Now;
+            this.date_k_out.Value = DateTime.Now;
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -35,7 +43,25 @@ namespace YaoSearch
             ExportXmlIn(txtXmlPath.Text,txtComCode.Text,txtComName.Text,date_k_in.Value);
             ExportXmlOut(txtXmlPath.Text, txtComCode.Text, txtComName.Text, date_k_in.Value);
             ExportXmlInit(txtXmlPath.Text, txtComCode.Text, txtComName.Text, date_k_in.Value);
-            MessageBox.Show("ok");
+            MessageBox.Show("已生成药监上传数据。");
+            btnGenerate.Enabled = false;
+            //生成了当天的数据，则存入设置文件
+            string filePath = System.Windows.Forms.Application.StartupPath + "\\setting.ini";
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath);
+            }
+            CIniFile myFile = new CIniFile(filePath);
+            try
+            {
+                myFile.IniWriteValue("Setting", "ZxUploadXmlDateIn", this.date_k_in.Value.ToShortDateString());
+                myFile.IniWriteValue("Setting", "ZxUploadXmlDateOut", this.date_k_out.Value.ToShortDateString());
+                myFile.IniWriteValue("Setting", "ZxUploadXmlDateInit", this.date_k_init.Value.ToShortDateString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ExportXmlIn(string filePath,string senderId,string senderName,DateTime generateDate)
@@ -46,6 +72,8 @@ namespace YaoSearch
             xmlEnv.SENDERNAME = senderName;
             xmlEnv.GENERATE_DATE = generateDate;
             xmlEnv.SOFTTYPE = "1";
+            xmlEnv.SEND_TIME = DateTime.Now;
+
             CDBOperate db = new CDBOperate();
             List<CXmlIn> xmlinList = db.GetXmlInsList(thisConn, Convert.ToDateTime(xmlEnv.GENERATE_DATE.ToShortDateString()));
             XmlDocument doc = new XmlDocument();
@@ -160,7 +188,8 @@ namespace YaoSearch
             xmlEnv.SENDERNAME = senderName;
             xmlEnv.GENERATE_DATE = generateDate;
             xmlEnv.SOFTTYPE = "1";
-            
+            xmlEnv.SEND_TIME = DateTime.Now;
+
             XmlDocument doc = new XmlDocument();
             XmlDeclaration declaration = doc.CreateXmlDeclaration("1.0", "utf-8", "");//xml文档声明部分
             doc.AppendChild(declaration);
@@ -276,6 +305,7 @@ namespace YaoSearch
             xmlEnv.SENDERNAME = senderName;
             xmlEnv.GENERATE_DATE = generateDate;
             xmlEnv.SOFTTYPE = "1";
+            xmlEnv.SEND_TIME = DateTime.Now;
 
             XmlDocument doc = new XmlDocument();
             XmlDeclaration declaration = doc.CreateXmlDeclaration("1.0", "utf-8", "");//xml文档声明部分
